@@ -9,62 +9,108 @@ body { font-family: Arial, sans-serif; padding: 20px; background:#f0f0f0; }
 .container { max-width:600px; margin:auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
 h1 { text-align:center; }
 .product { margin:20px 0; padding:10px; border:1px solid #0b1af0; border-radius:5px; background:#fafafa; }
-button { padding:10px 20px; background:#28a745; color:#fff; border:none; border-radius:5px; cursor:pointer; }
+button { padding:10px 20px; background:#28a745; color:#fff; border:none; border-radius:5px; cursor:pointer; margin:5px 0; }
 button:hover { background:#218838; }
 
+/* مودال */
+#paymentModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+     background:rgba(0,0,0,0.5); justify-content:center; align-items:center; }
+#paymentModal .modal-content { background:#fff; padding:20px; border-radius:10px; text-align:center; max-width:300px; margin:auto; }
+#paymentModal .modal-content button { width:80%; margin:10px 0; }
+
+.intro { background:#e0f7fa; padding:15px; border-radius:8px; margin-bottom:20px; text-align:center; }
 </style>
 </head>
 <body>
 
-    <div class="header" style="text-align:center; margin-bottom:20px;">
+<div class="header" style="text-align:center; margin-bottom:20px;">
   <img src="logo.png" alt="VPNIP Logo" style="width:150px; height:auto;">
 </div>
 
 <div class="container">
-<h1>VPNIP</h1>
+<h1>VPNIP هاستل کارون</h1>
 
-<div class="product">
-<h2>VPN ایران</h2>
-<p>آی‌پی ایران با سرعت بالا</p>
-<!-- لینک PayPal محصول 1 → جایگزین YOUR_PAYPAL_LINK_HERE_1 -->
-<a href="https://www.paypal.com/ncp/payment/F8XQK2SULFYSU" target="_blank">
-<button>پرداخت و دریافت لینک</button>
-</a>
-<!-- لینک دانلود فایل محصول 1 → جایگزین YOUR_DOWNLOAD_LINK_HERE_1 -->
-<p> لینک زاپاس بعد پرداخت نیاز به تایید من: 
-<a href="https://drive.google.com/file/d/1Z4b0hJJytFi2nSnQztbic1tIYgItFUyB/view?usp=drivesdk" target="_blank"> VPN ایران</a>
-</p>
+<!-- بخش توضیحات -->
+<div class="intro">
+  <h2>خوش آمدید به VPNIP</h2>
+  <p>در اینجا می‌توانید انواع VPN با آی‌پی ایران و آی‌پی ثابت کشورهای دیگر را با سرعت بالا و امنیت کامل خریداری کنید.</p>
+  <p>پرداخت سریع از طریق پی‌پال، کارت بانکی، سیبمو یا ارز دیجیتال.</p>
+  <p>سایت فروش VPN هاستل کارون</p>
 </div>
 
+<!-- محصول 1 -->
 <div class="product">
-<h2>VPN IP ثابت </h2>
-<p>آی‌پی کشورهای دیگر با سرعت بالا</p>
-<!-- لینک PayPal محصول 2 → جایگزین YOUR_PAYPAL_LINK_HERE_2 -->
-<a href="https://www.paypal.com/ncp/payment/GBGNQ3CSEVCVY" target="_blank">
-<button>پرداخت و دریافت لینک</button>
-</a>
-<!-- لینک دانلود فایل محصول 2 → جایگزین YOUR_DOWNLOAD_LINK_HERE_2 -->
-<p> لینک زاپاس بعد پرداخت نیاز به تایید من:
-<a href="https://drive.google.com/file/d/11Veiv09W_O8vEnWb1Vb1tTs6Yg3kX3Ko/view?usp=drivesdk" target="_blank">VPN ایران 2</a>
-</p>
+  <h2>VPN ایران</h2>
+  <p>آی‌پی ایران با سرعت بالا</p>
+  <button onclick="showPaymentOptions('iran')">پرداخت و دریافت لینک</button>
+  <p> لینک زاپاس بعد پرداخت نیاز به تایید من: 
+    <a href="https://drive.google.com/file/d/1Z4b0hJJytFi2nSnQztbic1tIYgItFUyB/view?usp=drivesdk" target="_blank"> VPN ایران</a>
+  </p>
+</div>
+
+<!-- محصول 2 -->
+<div class="product">
+  <h2>VPN IP ثابت</h2>
+  <p>آی‌پی کشورهای دیگر با سرعت بالا</p>
+  <button onclick="showPaymentOptions('static')">پرداخت و دریافت لینک</button>
+  <p> لینک زاپاس بعد پرداخت نیاز به تایید من:
+    <a href="https://drive.google.com/file/d/11Veiv09W_O8vEnWb1Vb1tTs6Yg3kX3Ko/view?usp=drivesdk" target="_blank">VPN ایران 2</a>
+  </p>
 </div>
 
 <div class="contact">
   <h2>تماس با ما</h2>
-  <p>در صورت مشکل در دریافت فایل  با من تماس و یا در تلگرام پیام دهید</p>
-
-  <!-- دکمه تلگرام -->
+  <p>در صورت مشکل در دریافت فایل با من تماس و یا در تلگرام پیام دهید</p>
   <a href="https://t.me/Lord_OF_LEGENDS_mamad" target="_blank">
     <button>تماس از طریق تلگرام</button>
   </a>
-
-  <!-- دکمه تماس تلفنی -->
   <a href="tel:+96892081192">
     <button>تماس تلفنی</button>
   </a>
 </div>
 
-
 </div>
+
+<!-- مودال پرداخت -->
+<div id="paymentModal">
+  <div class="modal-content">
+    <h3>انتخاب روش پرداخت</h3>
+    <button onclick="pay('paypal')">پی‌پال / کارت بانکی</button>
+    <button onclick="pay('sibmo')">سیبمو / ارز دیجیتال</button>
+    <br><br>
+    <button onclick="closeModal()">انصراف</button>
+  </div>
+</div>
+
+<script>
+let currentProduct = '';
+
+function showPaymentOptions(product) {
+  currentProduct = product;
+  document.getElementById('paymentModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('paymentModal').style.display = 'none';
+}
+
+function pay(method) {
+  if(currentProduct === 'iran') {
+    if(method === 'paypal') {
+      window.open('https://www.paypal.com/ncp/payment/F8XQK2SULFYSU','_blank');
+    } else if(method === 'sibmo') {
+      window.open('https://sibmo.ir/mamad_hkabalo','_blank');
+    }
+  } else if(currentProduct === 'static') {
+    if(method === 'paypal') {
+      window.open('https://www.paypal.com/ncp/payment/GBGNQ3CSEVCVY','_blank');
+    } else if(method === 'sibmo') {
+      window.open('https://sibmo.ir/mamad_hkabalo','_blank');
+    }
+  }
+  closeModal();
+}
+</script>
+
 </body>
 </html>
