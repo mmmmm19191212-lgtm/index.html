@@ -57,7 +57,7 @@ button:hover { background:#218838; }
 <div class="contact">
   <h2>تماس با ما</h2>
   <p>در صورت مشکل در دریافت فایل با من تماس و یا در تلگرام پیام دهید</p>
-  <a href="https://t.me/Lord_OF_LEGENDS_mamad" target="_blank">
+  <a href="https://t.me/Mamad_OT" target="_blank">
     <button>تماس از طریق تلگرام</button>
   </a>
   <a href="tel:+96892081192">
@@ -107,6 +107,62 @@ function pay(method) {
   closeModal();
 }
 </script>
+
+<!-- بخش ویدیو تبلیغ -->
+<div style="max-width:300px; margin:40px auto; text-align:center;">
+  <video id="scroll-video" width="100%" style="border-radius:10px;" muted loop controls preload="metadata">
+    <source src="your-video.mp4" type="video/mp4">
+    مرورگر شما از ویدیو پشتیبانی نمی‌کند.
+  </video>
+  <p style="font-size:18px; margin-top:6px; color:#666;">
+    تست دانلو و باز کردن سایت موزیک
+  </p>
+</div>
+
+<script>
+  const video = document.getElementById('scroll-video');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        video.play();   // وقتی تو دید باشه → پخش
+      } else {
+        video.pause();  // وقتی خارج دید بشه → توقف
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(video);
+</script>
+
+<!-- بخش ویدیو کوچک با پخش خودکار هنگام اسکرول -->
+<div style="max-width:300px; margin:40px auto; text-align:center;">
+  <video id="scroll-video" width="100%" style="border-radius:10px;" muted loop controls preload="metadata">
+    <source src="PJ2.mp4" type="video/mp4">
+    مرورگر شما از ویدیو پشتیبانی نمی‌کند.
+  </video>
+  <p style="font-size:30px; margin-top:6px; color:#666;">
+    تست ای پی در سایت مای مدیو
+  </p>
+</div>
+
+<script>
+  const video = document.getElementById('scroll-video');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        video.play();   // وقتی ویدیو در دید کاربر است → پخش
+      } else {
+        video.pause();  // وقتی خارج دید شد → توقف
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(video);
+</script>
+
+
 
 </body>
 </html>
